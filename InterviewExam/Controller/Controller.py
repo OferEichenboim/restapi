@@ -28,5 +28,5 @@ def ticket_time_filter(query):
     tickets = dal.filter_by_time(query_dict)
     return output_gate(tickets)
 
-
-
+def tickets_title_filter(query):
+    return tickets_text_filter(query)
