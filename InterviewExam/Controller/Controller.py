@@ -19,8 +19,6 @@ def get_all_tickets():
 def tickets_text_filter(query):
     '''This function returns all tickets that match text field-content from the list [(text field,searched content)]'''
     query_dict = convert_to_dict(query)
-    print(query_dict)
-    print(type(query_dict))
     tickets = dal.filter_by_txt(query_dict)
     return output_gate(tickets)
 
