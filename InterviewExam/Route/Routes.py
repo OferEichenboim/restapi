@@ -1,5 +1,8 @@
+import __init__
+
+
 from fastapi import FastAPI
-import Controller as ctrl
+import Controller.Controller as ctrl
 app = FastAPI()
 
 @app.get("/")

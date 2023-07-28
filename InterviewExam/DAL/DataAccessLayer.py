@@ -1,6 +1,8 @@
+import __init__
 import json
 
-db_path = "data.json"
+
+db_path = "Task_env/data.json"
 
 def load_database(db = db_path):
     '''This function load the json database to a python list'''
