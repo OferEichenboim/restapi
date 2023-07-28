@@ -1,0 +1,4 @@
+1. Code smell - devide nested loops and if statements to seperate funciton. Code should tell a story
+2. Devide the Code to sperate directories by layer.
+3. Reusability - refactor the filter_by_title function to call the filter_by_text\time functions
+4. Do not reflect internal use between the Controller (business logic) and Routes the is shown to the outside user.
