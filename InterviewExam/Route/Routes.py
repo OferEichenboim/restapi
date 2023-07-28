@@ -17,7 +17,7 @@ def get_tickets_by_time(query):
 
 @app.get("/tickets/title_filter/")
 def get_ticket_by_title(query):
-    return ctrl.tickets_text_filter(query)
+    return ctrl.tickets_title_filter(query)
 
 @app.get("/tickets")
 def get_tickets():
