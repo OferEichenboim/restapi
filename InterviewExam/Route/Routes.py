@@ -1,4 +1,4 @@
-import __init__
+#import __init__
 from fastapi import FastAPI
 import Controller.Controller as ctrl
 app = FastAPI()
@@ -7,15 +7,15 @@ app = FastAPI()
 def root():
     return {"message":"Welcome to the Company Exam, now emphasising SRP and devision to layers"}
 
-@app.get("/tickets/txt_filter")
+@app.get("/tickets/txt_filter/")
 def get_ticket_by_title(query):
     return ctrl.tickets_text_filter(query)
 
-@app.get("/tickets/time_filter")
+@app.get("/tickets/time_filter/")
 def get_tickets_by_time(query):
     return ctrl.ticket_time_filter(query)
 
-@app.get("/tickets/title_filter")
+@app.get("/tickets/title_filter/")
 def get_ticket_by_title(query):
     return ctrl.tickets_text_filter(query)
 
