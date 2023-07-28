@@ -13,7 +13,7 @@ def output_gate(tickets_list):
 
 def get_all_tickets():
     '''this function returns all tickets'''
-    tickets = dal.load_database()
+    tickets = dal.filter_by_time({"time":{}})
     return output_gate(tickets)
     
 def tickets_text_filter(query):
@@ -28,5 +28,5 @@ def ticket_time_filter(query):
     tickets = dal.filter_by_time(query_dict)
     return output_gate(tickets)
 
-
-
+def tickets_title_filter(query):
+    return tickets_text_filter(query)
