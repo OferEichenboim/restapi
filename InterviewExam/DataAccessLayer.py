@@ -8,21 +8,26 @@ def load_database(db = db_path):
         output = json.load(f)
     return output
 
+def check_txt(ticket,text_dict):
+    for key in text_dict.keys():
+        if ticket[key] != text_dict[key]:
+            return False
+    return True
+
+def add_match(out_list,add,ticket):
+    if add == True:
+        out_list.append(ticket)
+    return out_list
 
 def filter_by_txt(query_dict):
-    idx_to_delete = set()
     output_list = []
     global db_list
-    for key in query_dict["text"].keys():
-        for i,ticket in enumerate(db_list):   
-            if ticket[key]!=query_dict["text"][key]:
-                idx_to_delete.add(i)
-    for i in range(len(db_list)):
-        if i not in idx_to_delete:
-            output_list.append(db_list[i])
+    for ticket in db_list:
+        add = check_txt(ticket,query_dict["text"])
+        output_list = add_match(output_list,add,ticket)
     return output_list
 
-def get_query_time(time_dict,type):
+def get_type_time(time_dict,type):
     if type=="start":
         t = time_dict["start"]
     elif type == "end":
@@ -31,13 +36,14 @@ def get_query_time(time_dict,type):
         raise KeyError
     return t
     
+
 def get_time(time_dict):
     start_time = 0
     end_time = 9999999999999
     if "start" in time_dict.keys():
-        start_time = get_query_time(time_dict,"start")
+        start_time = get_type_time(time_dict,"start")
     if "end" in time_dict.keys():
-        end_time = get_query_time(time_dict,"end") 
+        end_time = get_type_time(time_dict,"end") 
     return start_time,end_time
     
         
