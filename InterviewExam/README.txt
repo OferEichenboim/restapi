@@ -9,6 +9,3 @@ uvicorn main:app --reload
 <URL>/docs
 
 * The <URL> should be - http://127.0.0.1:8000 and existed in the INFO messages shown after step 2.
-
-
-Ofer Eichenboim
