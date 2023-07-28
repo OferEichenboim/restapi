@@ -1,4 +1,4 @@
-import __init__
+#import __init__
 
 
 from fastapi import FastAPI
