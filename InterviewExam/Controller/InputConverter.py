@@ -7,7 +7,6 @@ def convert_string(inp):
 def convert_by_type(inp,type):
     if type==str:
         dict = convert_string(inp)
-        print(dict)
         return dict
     print("Can't convert input to dictionary\json")
     return {"message": "Can't convert input to dictionary"}
